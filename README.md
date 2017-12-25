@@ -74,3 +74,11 @@ $ npm run dev
 $ npm i babel-plugin-transform-runtime -D
 # webpack.config.js 補上 plugins 設定
 ```
+
+## 處理其他類型的檔案 - 先從支援 CSS 開始
+
+```bash
+$ npm i style-loader css-loader -D
+# 設定 webpack.config.js
+# 加入 css 測試
+```
