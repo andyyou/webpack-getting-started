@@ -38,3 +38,13 @@ $ python -m SimpleHTTPServer
 $ npm i http-server
 $ npx http-server
 ```
+
+## 使用設定檔 webpack.config.js
+
+```bash
+# 新增 webpack.config.js
+$ npx webpack --config webpack.config.js
+
+# 搭配 npm scripts
+$ npm run build
+```
