@@ -1,10 +1,10 @@
 import _ from 'lodash'
 
-function component() {
+const component = (val) => {
   var element = document.createElement('div')
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  console.log('This time we use webpack')
+  element.innerHTML = _.join(['Hello', 'webpack', val], ' ')
+
   return element
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component('Yo!'));

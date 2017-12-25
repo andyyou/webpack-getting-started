@@ -6,5 +6,21 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          // 注意：babel-loader 7.x 和 8.x 設定方式不一樣
+          options: {
+            presets: ['env'],
+            plugins: ['transform-runtime']
+          }
+        }
+      }
+    ]
   }
 }

@@ -48,3 +48,29 @@ $ npx webpack --config webpack.config.js
 # 搭配 npm scripts
 $ npm run build
 ```
+
+## 支援 ES2015
+
+```bash
+# https://babeljs.io/docs/setup/#installation
+# https://webpack.js.org/loaders/babel-loader
+# NOTE: 文件更新的問題導致我們很多時候需要兩邊參照
+
+$ npm i babel-loader babel-core babel-preset-env -D
+# 有兩種設定 babel 的方式
+# .babelrc
+# webpack.config.js loader 設定
+# 測試使用 ES2015
+
+# 搭配 webpack-dev-server
+$ npm i webpack-dev-server -D
+# 加上 npm scripts
+$ npm run dev
+
+# babel-loader 注意事項
+# b-1. 不要處理 node_modules 裡面的檔案
+# b-2. 預設會在每隻編譯的檔案注入一些協助轉換的 helper，如果每隻檔案都注入那程式碼就會快速變大。
+#      因此需要 babel-plugin-transform-runtime
+$ npm i babel-plugin-transform-runtime -D
+# webpack.config.js 補上 plugins 設定
+```

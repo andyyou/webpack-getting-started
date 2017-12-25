@@ -65,23 +65,25 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 
 
-function component() {
-  var element = document.createElement('div')
-  element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello', 'webpack'], ' ')
-  console.log('This time we use webpack')
-  return element
-}
+var _lodash = __webpack_require__(1);
 
-document.body.appendChild(component());
+var _lodash2 = _interopRequireDefault(_lodash);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var component = function component(val) {
+  var element = document.createElement('div');
+  element.innerHTML = _lodash2.default.join(['Hello', 'webpack', val], ' ');
+
+  return element;
+};
+
+document.body.appendChild(component('Yo'));
 
 /***/ }),
 /* 1 */
