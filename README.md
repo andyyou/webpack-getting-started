@@ -97,5 +97,13 @@ $ npm run build # 觀察編譯結果
 ```bash
 $ npm i url-loader -D
 # 設定 webpack.config.js
-# 這邊單純只是示範，事實上圖片比較時候使用 url-loader 轉換成 base64
+# 這邊單純只是示範，事實上圖片比較適合使用 url-loader 轉換成 base64
+```
+
+## 處理其他檔案
+
+```bash
+$ npm i excel-loader -D
+# 設定 webpack.config.js
+# 其他檔案以此類推
 ```

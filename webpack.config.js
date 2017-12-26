@@ -43,6 +43,12 @@ module.exports = {
             limit: 8192
           }
         }
+      },
+      {
+        test: /\.xls.?$/,
+        use: [
+          'excel-loader'
+        ]
       }
     ]
   }
