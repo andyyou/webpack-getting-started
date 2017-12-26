@@ -107,3 +107,18 @@ $ npm i excel-loader -D
 # 設定 webpack.config.js
 # 其他檔案以此類推
 ```
+
+## 理解 entry 設定
+
+```bash
+# 其實 webpack 還可以做到更多 - 輸出管理的部分：多個 entrypoint
+# entry 有三種參數形式可以搭配 [name]
+# 1. 字串: 指定單一 entry point 匯出一個 bundle, [name] = main
+# 2. 陣列: 彙整多個檔案匯出一個 bundle, [name] = main
+# 3. 物件: 匯出多個 bundle, 必須搭配 [name] = object property
+
+# webpack context 執行環境(或指設定參數)，即 webpack 載入/解析檔案時相對路徑的根目錄環境(起點)
+# 預設（沒有設定時）為執行指令（webpack）所在的那個目錄
+# 假如，我們在 src/ 目錄下執行 npx webpack --config=../webpack.config.js -> context = webpack-demo/src/
+# __dirname 檔案所在的目錄絕對路徑
+```
