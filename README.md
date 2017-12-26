@@ -82,3 +82,12 @@ $ npm i style-loader css-loader -D
 # 設定 webpack.config.js
 # 加入 css 測試
 ```
+
+## 處理圖片
+
+```bash
+$ npm i file-loader -D
+# 設定 webpack.config.js
+$ npm run dev
+$ npm run build # 觀察編譯結果
+```
