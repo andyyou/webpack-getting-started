@@ -91,3 +91,11 @@ $ npm i file-loader -D
 $ npm run dev
 $ npm run build # 觀察編譯結果
 ```
+
+## 處理字體
+
+```bash
+$ npm i url-loader -D
+# 設定 webpack.config.js
+# 這邊單純只是示範，事實上圖片比較時候使用 url-loader 轉換成 base64
+```
