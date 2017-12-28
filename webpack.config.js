@@ -1,5 +1,6 @@
 // 注意：設定檔本身並為支援 ES2015，視 node 版本而定
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -54,5 +55,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist'])
+  ]
 }

@@ -122,3 +122,13 @@ $ npm i excel-loader -D
 # 假如，我們在 src/ 目錄下執行 npx webpack --config=../webpack.config.js -> context = webpack-demo/src/
 # __dirname 檔案所在的目錄絕對路徑
 ```
+
+## 清理 /dist
+
+```bash
+# 你應該也注意到了，每次我們編譯的結果輸出到 /dist 是不會清除的，只會把同名的檔案覆蓋
+# 其他的檔案會持續保留
+# 在開發過程中，這可能導致我們搞錯
+$ npm i clean-webpack-plugin -D
+# 加入 plugin 設定到 webpack.config.js
+```
