@@ -182,4 +182,27 @@ $ npm i sass-loader node-sass postcss-loader precss autoprefixer -D
 # 在 index.js 匯入 scss
 # sass-loader 使用 node-sass 客製的載入機制使用 `~` 代表 node_modules 的路徑
 # @import "~bootstrap/dist/css/bootstrap";
+
+# 進階用法
+$ npm i exports-loader -D
 ```
+
+Bootstrap 進階用法，各別載入單獨的元件需要使用 `exports-loader`。下面為 webpack.config.js 設定 plugins
+
+為什麼這個範例需要 Util，觀察原始碼[看看該元件相依的檔案](https://github.com/twbs/bootstrap/blob/v4-dev/js/src/dropdown.js)
+
+```js
+new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  jquery: 'jquery',
+  'window.jQuery': 'jquery',
+  Popper: ['popper.js', 'default'],
+  // In case you imported plugins individually, you must also require them here:
+  Util: "exports-loader?Util!bootstrap/js/dist/util",
+  Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown"
+})
+```
+
+> [ProvidePlugin](https://webpack.js.org/plugins/provide-plugin/) 自動載入，例如：程式碼中出現 `$` 就自動載入
+> 如果某個函式庫建立了 global 的變數，exports-loader 可以協助將其加入 exports[...]

@@ -20,6 +20,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "excel-loader": "^1.0.0",
+    "exports-loader": "^0.6.4",
     "file-loader": "^1.1.6",
     "http-server": "^0.10.0",
     "node-sass": "^4.7.2",
