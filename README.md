@@ -132,3 +132,36 @@ $ npm i excel-loader -D
 $ npm i clean-webpack-plugin -D
 # 加入 plugin 設定到 webpack.config.js
 ```
+
+## Tree Shaking
+
+Tree Shaking 一般在提到 JavaScript 的情況下指的是把沒用到的程式碼移除，不過這個功能必須搭配 ES2015 的 `import` 和 `export`
+
+> 最好使用 .babelrc 因為有些 babel 支援的參數，babel-loader 的 options 可能不支援
+> 上面這個結論針對 babel-loader v7.x
+
+```bash
+# 加入 `src/math.js` 檔案
+# 為了觀察，我們將 index.js 中不必要的程式碼先移除
+# 我們在 index.js 並沒有 import square, Tree shaking 應該要把沒用到的 code 移除（換句話說應該不要輸出到編譯檔案）
+# 因為有些 babel 支援的參數，babel-loader 的 options 可能不支援。改用 .babelrc
+$ npm run build
+
+# 觀察輸出的編譯檔案, square 還是被包含在 code 了 只是沒有匯出, 但沒有被移除
+# 使用 uglifyjs-webpack-plugin
+$ npm i uglifyjs-webpack-plugin -D
+# 修改設定
+```
+
+#### .babelrc
+
+```babelrc
+{
+  "presets": [
+    ["env", {
+      "modules": false // 重要：要支援 Tree-Shaking 須設定這個參數
+    }]
+  ],
+  "plugins": ["transform-runtime"]
+}
+```
