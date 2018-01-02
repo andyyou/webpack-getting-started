@@ -1,4 +1,7 @@
 import { cube } from './math.js'
+import 'bootstrap/scss/bootstrap.scss'
+import 'bootstrap'
+
 
 const component = (val) => {
   var element = document.createElement('pre')

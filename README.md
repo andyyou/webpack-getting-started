@@ -165,3 +165,21 @@ $ npm i uglifyjs-webpack-plugin -D
   "plugins": ["transform-runtime"]
 }
 ```
+
+## 安裝 Bootstrap
+
+```bash
+# 實務練習 - 查詢版本
+$ npm view bootstrap versions
+# 安裝
+$ npm i bootstrap@4.0.0-beta.3
+$ npm i jquery popper.js # 相依
+# 修改 src/index.js 匯入 bootstrap
+
+# 為了編譯 Bootstrap 的 SCSS 我們需要 sass-loader, postcss-loader
+$ npm i sass-loader node-sass postcss-loader precss autoprefixer -D
+# 修改 webpack.config.js
+# 在 index.js 匯入 scss
+# sass-loader 使用 node-sass 客製的載入機制使用 `~` 代表 node_modules 的路徑
+# @import "~bootstrap/dist/css/bootstrap";
+```
